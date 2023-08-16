@@ -1,0 +1,7 @@
+name: brainweb2D
+base_path: path_to/src/brainweb_2d/
+part: subset_test #"validation" # subset_test_tumour
+poisson_scale: 2.5 
+img_xy_dim: 128
+img_z_dim: 1
+num_samples: 45

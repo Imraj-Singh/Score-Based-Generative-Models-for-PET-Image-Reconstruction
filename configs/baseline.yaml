@@ -1,0 +1,24 @@
+hydra: 
+  run:
+    dir: OSEM/${model.name}/${dataset.name}/tumour_${dataset.tumour}_scale_${dataset.poisson_scale}/${baseline.prior.name}/${hydra.job.override_dirname}
+  sweep:
+    dir: OSEM/${model.name}/${dataset.name}/tumour_${dataset.tumour}_scale_${dataset.poisson_scale}/${baseline.prior.name}/
+    subdir: ${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - dataset.name
+          - dataset.tumour
+          - dataset.poisson_scale
+          - baseline.prior.name
+defaults:
+  - _self_
+  - dataset: brainweb2Ddataset
+  - baseline: osem
+  - baseline/prior: quadratic
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+seed: 1
+num_images: 1
+device: cuda

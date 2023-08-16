@@ -1,0 +1,7 @@
+name: dds_3D
+defaults:
+ - dds
+num_iterations: 5
+num_subsets: 28
+lambd: null
+beta: null

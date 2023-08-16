@@ -1,0 +1,11 @@
+{
+	"name": "SIRF Container",
+	"image": "imrajs/sirf_base:latest",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/user/sirf,type=bind",
+	"workspaceFolder": "/home/user/sirf",
+	"forwardPorts": [9002,9999,8890],
+	"extensions": ["ms-python.python", "ms-toolsai.jupyter"],
+	"runArgs": ["--gpus=all","--init","--network=host","--shm-size=5gb"],
+	"postCreateCommand": "bash scripts/postCreateCommand.sh",
+	"hostRequirements": {"cpus": 16, "memory": "32gb", "storage": "64gb"}
+}

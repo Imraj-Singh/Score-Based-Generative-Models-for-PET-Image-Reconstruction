@@ -1,0 +1,11 @@
+name: naive
+num_steps: 1000
+eps: 1e-04
+pct_chain_elapsed: 0
+num_img_log: 50
+log_freq: 10
+batch_size: 8
+add_corrector: False
+guidance_strength: null
+use_osem_nll: False
+penalty: null

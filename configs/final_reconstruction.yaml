@@ -1,0 +1,28 @@
+hydra: 
+  run:
+    dir: FINAL_SINGLE/${dataset.part}_${dataset.poisson_scale}/${score_based_model.name}/${sampling.name}/${now:%Y-%m-%d-%H-%M-%S}
+  sweep:
+    dir: FINAL_RERUN/${dataset.part}_${dataset.poisson_scale}/${score_based_model.name}/${sampling.name}/${now:%Y-%m-%d-%H-%M-%S}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - dataset.name
+          - dataset.part
+          - dataset.poisson_scale
+          - sampling.name
+          - sampling
+          - score_based_model.name
+          - score_based_model
+
+defaults:
+  - _self_
+  - dataset: brainweb2Ddataset
+  - score_based_model: vesde_image_scale
+  - sampling: naive
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+seed: 42
+num_images: 1
+device: cuda
+dump_path: path_to/dump

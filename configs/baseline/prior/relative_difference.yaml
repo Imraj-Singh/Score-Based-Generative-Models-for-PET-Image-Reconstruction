@@ -1,0 +1,3 @@
+name: relative_difference
+penalty: 100
+gamma: 2

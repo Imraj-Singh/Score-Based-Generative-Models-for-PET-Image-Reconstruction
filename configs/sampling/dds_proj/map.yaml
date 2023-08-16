@@ -1,0 +1,4 @@
+name: map
+num_epochs: null
+num_subsets: 1
+beta: null

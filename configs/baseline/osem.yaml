@@ -1,0 +1,3 @@
+num_subsets: 1
+num_epochs: 1000
+num_img_log: 5

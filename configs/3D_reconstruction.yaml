@@ -1,0 +1,31 @@
+hydra: 
+  run:
+    dir: FINAL_3D/${dataset.name}_${dataset.count_level}_${dataset.realisation}_${dataset.tracer}/${sampling.name}_iters_${sampling.num_iterations}_subsets_${sampling.num_subsets}_lambda_${sampling.lambd}_beta_${sampling.beta}/
+  sweep:
+    dir: FINAL_3D/${dataset.name}_${dataset.count_level}_${dataset.realisation}_${dataset.tracer}/${sampling.name}_iters_${sampling.num_iterations}_subsets_${sampling.num_subsets}_lambda_${sampling.lambd}_beta_${sampling.beta}/
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - dataset
+          - dataset.name
+          - dataset.count_level
+          - dataset.realisation
+          - sampling.name
+          - sampling
+          - sampling.num_iterations
+          - sampling.num_subsets
+          - sampling.lambd
+          - sampling.beta
+          - score_based_model.name
+          - score_based_model
+
+defaults:
+  - _self_
+  - dataset: brainweb3D
+  - score_based_model: vpsde_image_scale
+  - sampling: dds_3D
+seed: 42
+num_images: 1
+device: cuda
+dump_path: path_to/coordinators/dump
