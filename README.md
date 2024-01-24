@@ -28,7 +28,7 @@ We thank the authors of the aforementioned repositories for their open-source de
 
 ## Datasets and Reproducibility
 
-The results of this work are *in-silico* simulations of the [BrainWeb dataset](https://brainweb.bic.mni.mcgill.ca/), and all datasets are freely available for download/generation. For 2D work, and training the score-model, we use the dataset available [here](https://zenodo.org/record/4897350), which can be downloaded through [pyParalellProj](https://github.com/gschramm/pyparallelproj). For 3D work we use the dataset available here [here](https://github.com/casperdcl/brainweb).
+The results of this work are *in-silico* simulations of the [BrainWeb dataset](https://brainweb.bic.mni.mcgill.ca/), and all datasets are freely available for download/generation. For 2D work, and training the score-model, we use the dataset available [here](https://zenodo.org/records/10509379), which can be downloaded through [pyParalellProj](https://github.com/gschramm/pyparallelproj). For 3D work we use the dataset available here [here](https://github.com/casperdcl/brainweb).
 
 Files for the generation of 2D data can be found in [src/brainweb_2d/](src/brainweb_2d/). For 3D data generation we provide a juypter notebook [src/sirf/brainweb_3D.ipynb](src/sirf/brainweb_3D.ipynb).
 
@@ -36,18 +36,20 @@ Training of the score-model requires running script [main_score_based_models_tra
 
 For reproducibility we provide a devcontainer utilising docker to containerise the development environment required for this work. The files are located in [.devcontainer/](.devcontainer/), these files use scripts to setup up conda environments where the environment is defined with files in [scripts/](scripts/), we provided full list of static dependencies in [req.txt](scripts/req.txt). Please note that this project requires [SIRF](https://github.com/SyneRBI/SIRF) for 3D work.
 
-Trained score-models are available [TBD](zenodo somewhere), and results are available upon request.
-
 ## Citation
 Arxiv bibtex:
 ```
-@misc{singh2023scorebased,
-      title={Score-Based Generative Models for PET Image Reconstruction}, 
-      author={Imraj RD Singh and Alexander Denker and Riccardo Barbano and Željko Kereta and Bangti Jin and Kris Thielemans and Peter Maass and Simon Arridge},
-      year={2023},
-      eprint={2308.14190},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+@article{melba:2024:001:singh,
+    title = "Score-Based Generative Models for PET Image Reconstruction",
+    author = "Singh, Imraj RD and Denker, Alexander and Barbano, Riccardo and Kereta, Željko and Jin, Bangti and Thielemans, Kris and Maass, Peter and Arridge, Simon",
+    journal = "Machine Learning for Biomedical Imaging",
+    volume = "2",
+    issue = "Special Issue for Generative Models",
+    year = "2024",
+    pages = "547--585",
+    issn = "2766-905X",
+    doi = "https://doi.org/10.59275/j.melba.2024-5d51",
+    url = "https://melba-journal.org/2024:001"
 }
 ```
 
